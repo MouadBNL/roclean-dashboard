@@ -22,13 +22,13 @@
                 </nav>
 
                 <div class="flex gap-4">
-                    <NButton>Login</NButton>
+                    <NButton @click="() => router.push({name: 'login'})">Login</NButton>
                     <NButton type="primary">Join us</NButton>
                 </div>
             </div>
         </header>
     
-        <main class="flex-grow">
+        <main class="flex-grow flex flex-col">
             <slot />
         </main>
     
@@ -41,6 +41,9 @@
 </template>
 
 <script lang="ts" setup>
-import { NButton } from 'naive-ui';
+import { NButton } from 'naive-ui'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 </script>
