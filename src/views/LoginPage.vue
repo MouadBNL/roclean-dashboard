@@ -58,10 +58,10 @@ const rules = {
 const router = useRouter()
 const handleLogin = async (e:any) => {
     let passVlidation = false
-    await formRef.value?.validate(async (errors: Array<any>|null|undefined) => {
+    formRef.value?.validate(async (errors: Array<any>|null|undefined) => {
         if(!errors || errors.length  == 0){
             passVlidation = true
-            // Redirect
+            router.push({name: 'dashboard'})
         }
     })
 }

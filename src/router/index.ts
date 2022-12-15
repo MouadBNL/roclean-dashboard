@@ -16,6 +16,17 @@ const router = createRouter({
             path: '/login',
             name: 'login',
             component: () => import('../views/LoginPage.vue')
+        },
+        {
+            path: '/admin',
+            component: () => import('../layouts/admin/AdminLayout.vue'),
+            children: [
+                {
+                    path: '/dashboard',
+                    name: 'dashboard',
+                    component: () => import('../views/admin/DashboardPage.vue')
+                }
+            ]
         }
     ]
 })

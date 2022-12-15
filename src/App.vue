@@ -1,9 +1,13 @@
 <template>
 	<n-config-provider preflight-style-disabled>
-		<RouterView/>
+		<NMessageProvider>
+			<NLoadingBarProvider>
+				<RouterView/>
+			</NLoadingBarProvider>
+		</NMessageProvider>
 	</n-config-provider>
 </template>
 
 <script setup lang="ts">
-import { NButton, NConfigProvider } from 'naive-ui'
+import { NButton, NConfigProvider, NLoadingBarProvider, NMessageProvider } from 'naive-ui'
 </script>
