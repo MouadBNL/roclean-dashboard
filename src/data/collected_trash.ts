@@ -2,7 +2,7 @@ import { computed, reactive, ref } from 'vue'
 
 type keys = 'glass' | 'metal' | 'paper' | 'plastic' | 'organic' | 'others'
 
-interface numStats {
+export interface numStats {
     glass: number,
     metal: number,
     paper: number,

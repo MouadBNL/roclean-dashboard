@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto">
         <h2 class="text-2xl font-bold mb-8">Dashboard</h2>
-        <NCard class="mb-12" title="Overview">
+        <NCard class="mb-12" :title="`Overview | ${trashTotal}`">
             <div class="grid grid-cols-6">
                 <div class="flex items-center justify-center">
                     <div>
@@ -13,7 +13,7 @@
                             </svg>
                         </NProgress>
                         <h4 class="text-lg font-bold text-center text-gray-600">Glass</h4>
-                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.glass }}%</h5>
+                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.glass }}% | {{ trashStats.glass }}</h5>
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
@@ -26,7 +26,7 @@
                             </svg>
                         </NProgress>
                         <h4 class="text-lg font-bold text-center text-gray-600">Metal</h4>
-                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.metal }}%</h5>
+                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.metal }}% | {{ trashStats.metal }}</h5>
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
@@ -40,7 +40,7 @@
 
                         </NProgress>
                         <h4 class="text-lg font-bold text-center text-gray-600">Paper</h4>
-                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.paper }}%</h5>
+                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.paper }}% | {{ trashStats.paper }}</h5>
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
@@ -53,7 +53,7 @@
                             </svg>
                         </NProgress>
                         <h4 class="text-lg font-bold text-center text-gray-600">Plsatic</h4>
-                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.plastic }}%</h5>
+                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.plastic }}% | {{ trashStats.plastic }}</h5>
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
@@ -66,7 +66,7 @@
                             </svg>
                         </NProgress>
                         <h4 class="text-lg font-bold text-center text-gray-600">Organic</h4>
-                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.organic }}%</h5>
+                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.organic }}% | {{ trashStats.organic }}</h5>
                     </div>
                 </div>
                 <div class="flex items-center justify-center">
@@ -80,7 +80,7 @@
                             </svg>
                         </NProgress>
                         <h4 class="text-lg font-bold text-center text-gray-600">Undefined</h4>
-                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.others }}%</h5>
+                        <h5 class="text-sm font-normal text-gray-500 text-center">{{ trashPercentages.others }}% | {{ trashStats.others }}</h5>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
             </RouterLink>
         </div>
         <div class="grid grid-cols-4 gap-4 mb-12">
-            <RobotCard v-for="(r, i) in shownRocleans" :key="i" :name="r.name" :battery="r.battery"
+            <RobotCard v-for="(r, i) in shownRocleans" :key="i" :name="r.name" :battery="r.battery" :id="r.id"
                 :capacity="r.capacity" :running="r.running" />
         </div>
     </div>
@@ -112,7 +112,7 @@ import { NButton, NCard, NProgress, NSpace } from 'naive-ui';
 import RobotCard from '../../components/RobotCard.vue';
 import { RocleanProps, rocleans } from '../../data/rocleans'
 import { computed } from 'vue'
-import { trashPercentages } from '../../data/collected_trash'
+import { trashPercentages, trashStats, trashTotal } from '../../data/collected_trash'
 
 
 

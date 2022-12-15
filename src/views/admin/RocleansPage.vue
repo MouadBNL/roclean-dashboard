@@ -2,7 +2,7 @@
     <div class="container mx-auto">
         <h2 class="text-2xl font-bold mb-8">Rocleans</h2>
         <div class="grid grid-cols-4 gap-4 mb-12">
-            <RobotCard v-for="(r, i) in rocleans" :key="i" :name="r.name" :battery="r.battery"
+            <RobotCard v-for="(r, i) in rocleans" :key="i" :name="r.name" :battery="r.battery" :id="r.id"
                 :capacity="r.capacity" :running="r.running" />
         </div>
     </div>

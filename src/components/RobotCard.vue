@@ -1,8 +1,16 @@
 <template>
     <article>
         <NCard>
-            <img class="block rounded-lg aspect-video mb-4" :src="imgUrl" alt="robot image">
-            <h3 class="text-gray-800 font-semibold text-xl mb-4">{{ props.name }}</h3>
+            <img class="block object-cover rounded-lg aspect-video mb-4" :src="imgUrl" alt="robot image">
+            <div class="flex justify-between mb-4">
+                <h3 class="text-gray-800 font-semibold text-xl">
+                    {{ props.name }}
+                    <span class="text-gray-400 font-light" v-if="props.id">#{{ props.id }}</span>
+                </h3>
+                <RouterLink v-if="props.id" :to="{name: 'show-roclean', params: { id: props.id }}">
+                    <NButton>Open</NButton>
+                </RouterLink>
+            </div>
             <div class="text-gray-600">
                 <p class="mb-2">Running: {{ props.running }}</p>
                 <p>
@@ -23,11 +31,12 @@
 </template>
 
 <script lang="ts" setup>
-import { NCard, NProgress, NSpace } from 'naive-ui'
+import { NButton, NCard, NProgress, NSpace } from 'naive-ui'
 import { computed } from 'vue'
-import { RocleanProps } from '../data/rocleans'
+
 
 interface Props {
+    id?: string
     name: string,
     running: string,
     capacity: number,
