@@ -34,8 +34,8 @@
       >
         <TheAuthLayoutSidebar />
       </n-layout-sider>
-      <n-layout content-style="padding: 24px;" :native-scrollbar="false" class="bg-gray-50">
-        <main class="container mx-auto">
+      <n-layout class="bg-gray-100" style="background-color: rgb(243 244 246 / 0.5)" :native-scrollbar="false">
+        <main class="container mx-auto p-6">
           <router-view :key="route.fullPath"></router-view>
         </main>
 
