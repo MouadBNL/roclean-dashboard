@@ -97,9 +97,7 @@
 
         <div class="mb-4 flex justify-between">
             <h2 class="text-2xl font-bold">My Rocleans</h2>
-            <RouterLink :to="{name: 'my-rocleans'}">
-                <NButton>View All</NButton>
-            </RouterLink>
+            <NButton>View All</NButton>
         </div>
         <div class="grid grid-cols-4 gap-4 mb-12">
             <RobotCard v-for="(r, i) in shownRocleans" :key="i" :name="r.name" :battery="r.battery"

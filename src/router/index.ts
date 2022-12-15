@@ -25,6 +25,11 @@ const router = createRouter({
                     path: '/dashboard',
                     name: 'dashboard',
                     component: () => import('../views/admin/DashboardPage.vue')
+                },
+                {
+                    path: '/rocleans',
+                    name: 'my-rocleans',
+                    component: () => import('../views/admin/RocleansPage.vue')
                 }
             ]
         }

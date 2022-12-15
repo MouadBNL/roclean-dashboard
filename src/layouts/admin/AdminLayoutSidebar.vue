@@ -27,12 +27,12 @@ const menuOptions = [
             resolveComponent('router-link') as any,
             {
                 to: {
-                    name: 'dashboard'
+                    name: 'my-rocleans'
                 }
             },
             { default: () => 'My Robots'}
         ),
-        key: 'dashboard'
+        key: 'rocleans'
     },
     {
         label: () => h(
@@ -42,9 +42,9 @@ const menuOptions = [
                     name: 'dashboard'
                 }
             },
-            { default: () => 'Dashboard'}
+            { default: () => 'My Profile'}
         ),
-        key: 'dashboard'
+        key: 'profile'
     },
 ]
 const getMenu = (menu: any[]) => {
