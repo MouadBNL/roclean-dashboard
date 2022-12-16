@@ -11,13 +11,13 @@
         <NCard class="mb-8" title="States">
             <div class="grid grid-cols-2 gap-8">
                 <p>
-                    <span class="text-xl font-thin">Battery</span>
+                    <span class="text-xl font-thin block mb-4">Battery</span>
                     <NProgress :percentage="Math.floor(roclean.battery)" :status="batteryState" :height="24">
                         <span class="block w-7">{{ Math.floor(roclean.battery) }}%</span>
                     </NProgress>
                 </p>
                 <p>
-                    <span class="text-xl font-thin">Capacity</span>
+                    <span class="text-xl font-thin block mb-4">Capacity</span>
                     <NProgress :percentage="Math.floor(roclean.capacity)" :status="capacityState" :height="24">
                         <span class="block w-7">{{ Math.floor(roclean.capacity) }}%</span>
                     </NProgress>
