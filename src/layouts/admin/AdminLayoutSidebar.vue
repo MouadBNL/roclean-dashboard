@@ -39,7 +39,7 @@ const menuOptions = [
             resolveComponent('router-link') as any,
             {
                 to: {
-                    name: 'dashboard'
+                    name: 'profile'
                 }
             },
             { default: () => 'My Profile'}

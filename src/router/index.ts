@@ -35,6 +35,11 @@ const router = createRouter({
                     path: '/rocleans/:id',
                     name: 'show-roclean',
                     component: () => import('../views/admin/ShowRocleansPage.vue')
+                },
+                {
+                    path: '/profile',
+                    name: 'profile',
+                    component: () => import('../views/admin/ProfilePage.vue')
                 }
             ]
         }
