@@ -34,7 +34,7 @@
     
         <footer class="mt-auto py-16 border-t border-gray-300 bg-white">
             <div class="container mx-auto">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid eum doloremque non quibusdam. Itaque, minima voluptates quo sint maiores odio distinctio impedit laboriosam architecto earum! Minima autem quibusdam in quod.</p>
+                <p class="text-center">Made with ❤️ By Roclean team | All rights reserved &copy; 2022</p>
             </div>
         </footer>
     </div>
