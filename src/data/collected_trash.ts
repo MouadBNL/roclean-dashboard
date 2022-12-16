@@ -28,10 +28,19 @@ export const trashTotal = computed<number>(() => {
     return total
 })
 
-export const trashPercentages = computed(() => {
+export const trashPercentages = computed<numStats>(() => {
     let pres = {glass: 0, metal: 0, paper: 0, plastic: 0, organic: 0, others: 0}
-    Object.keys(trashStats).forEach(el => {
-        pres[el as keys] = (trashStats[el as keys] / trashTotal.value * 100).toFixed(1)
-    })
+    // Object.keys(trashStats).forEach((el: string) => {
+    //     let v = (trashStats[el as keys] / trashTotal.value * 100).toFixed(1)
+        
+    // })
+    return {
+        glass: Number((trashStats.glass / trashTotal.value * 100).toFixed(1)),
+        metal: Number((trashStats.metal / trashTotal.value * 100).toFixed(1)),
+        paper: Number((trashStats.paper / trashTotal.value * 100).toFixed(1)),
+        plastic: Number((trashStats.plastic / trashTotal.value * 100).toFixed(1)),
+        organic: Number((trashStats.organic / trashTotal.value * 100).toFixed(1)),
+        others: Number((trashStats.others / trashTotal.value * 100).toFixed(1)),
+    }
     return pres
 })
